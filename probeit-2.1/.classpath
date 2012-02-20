@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/pml2-lightweight-api"/>
+	<classpathentry kind="lib" path="/lib/axis4/activation.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/axis-ant.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/axis.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/mail.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/mrj.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/saaj.jar"/>
+	<classpathentry kind="lib" path="/lib/axis4/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="/lib/common/antlr-2.7.5.jar"/>
+	<classpathentry kind="lib" path="/lib/common/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/lib/common/junit-4.1.jar"/>
+	<classpathentry kind="lib" path="/lib/common/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="/lib/common/lucene-core-2.3.1.jar"/>
+	<classpathentry kind="lib" path="/lib/common/wstx-asl-3.0.0.jar"/>
+	<classpathentry kind="lib" path="/lib/diva/acme.jar"/>
+	<classpathentry kind="lib" path="/lib/diva/diva.jar"/>
+	<classpathentry kind="lib" path="/lib/util/dataset.jar"/>
+	<classpathentry kind="lib" path="/lib/util/gmtServices.jar"/>
+	<classpathentry kind="lib" path="/lib/util/soap.jar"/>
+	<classpathentry kind="lib" path="/lib/jgraph/jgraph.jar" sourcepath="/JGraph/lib/jgraph.jar"/>
+	<classpathentry kind="lib" path="lib/viewers/ij.jar"/>
+	<classpathentry kind="lib" path="lib/viewers/parvis.jar"/>
+	<classpathentry kind="lib" path="/lib/jmf/customizer.jar"/>
+	<classpathentry kind="lib" path="/lib/jmf/jmf.jar"/>
+	<classpathentry kind="lib" path="/lib/jmf/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="/lib/jmf/multiplayer.jar"/>
+	<classpathentry kind="lib" path="/lib/jmf/sound.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/activation-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/arq-2.8.3.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/aterm-java-1.6.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/axis-1.4.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/axis-wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/iri-0.7.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/jaxrpc-api-1.1.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/jcl-over-slf4j-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/jena-2.6.2.jar" sourcepath="C:/tmp/jena-2.6.2/jena-2.6.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/tmp/jena-2.6.2/doc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/lib/jena262/jgrapht-jdk1.5-0.7.3.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/lucene-core-2.3.1.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/pellet-2.0.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/relaxngDatatype-20020414.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/saaj-api-1.2.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/upnp-1.0.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/wstx-asl-3.2.9.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/xercesImpl-2.7.1.jar"/>
+	<classpathentry kind="lib" path="/lib/jena262/xsdlib-20030225.jar"/>
+	<classpathentry kind="lib" path="/lib/util/RDFStore2.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/pml2-api"/>
+	<classpathentry kind="lib" path="lib/viewers/jpedal_lgpl.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

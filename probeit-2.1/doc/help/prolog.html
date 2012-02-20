@@ -1,0 +1,76 @@
+<html>
+
+<body>
+<h2>Probe-It! Help</h2>
+
+<p>There are many Prolog tutorials and examples on the web using proof
+traces to describe how Prolog works. However, you may not be able to
+"play" with the proofs or get additional information about
+proof-related information such as resolution by browsing the these
+proofs.
+
+With the help of few Inference Web tools you may be able to change
+your way of using and publishing proofs on the web. The Prolog code used
+distributed in this page was tested on <a
+href="http://www.swi-prolog.org/">SWI-Prolog</a>. If you know that it
+works on other versions of Prolog or you have an alternative code for
+other version of Prolog, please let us know. </p>
+
+<ol>
+<li>Install <a href="http://trust.utep.edu/ciminer/software/probeit/probeit.zip">Probe-It!</a> (you will
+need a java virtual machine to run Probe-It!)</li>
+<li>Save <a href="../../examples/prolog/pmlx.pl">pmlx.pl</a> in your Prolog home directory</li>
+
+<li>Enter in Prolog by typing <b><code>pl</code></b> and load pmlx.pl by
+typing <b><code>[pmlx].</code></b> (including the period at the end).</li>
+</ol>
+
+<p>Now you are ready to use the PML's interface to Prolog. pmlx.pl defines the following
+three predicates: </p>
+
+<ol>
+<li><b>why_all\1</b> : Use <b>why_all</b>(<i>goal</i>) to bring up explanatory proofs for all possible
+ways of satisfying <i>goal</i></li>
+
+<li><b>why\1</b> : Use <b>why</b>(<i>goal</i>) to bring up an explanatory proof for the first
+way of satisfying <i>goal</i>.</li>
+<li><b>why\2</b> : Use <b>why</b>(<i>goal, n</i>) to bring up an explanatory proof for the first
+
+<i>n</i> ways of satisfying <i>goal</i>.</li>
+</ol>
+
+<p>In order to test the working of the tool on a simple test case: </p>
+
+<ol>
+<li>Save <a href="./prolog/testcase.pl">testcase.pl</a> in your Prolog home directory</li>
+
+<li>Enter in Prolog by typing <b><code>pl</code></b> in you operating system prompt.</li>
+<li>Load pml.pl by typing <b><code>[pml].</code></b> (including the period at the end).</li>
+<li>Load testcase.pl by typing <b><code>[testcase].</code></b> (including the period at the end).</li>
+<li>Now you can try any of the following: 
+<ul>
+
+<li><b>why_all(p(X)).</b></li>
+<li><b>why(factorial(3, 6)).</b></li>
+<li><b>why(factorial(3, X)).</b></li>
+<li><b>why_all(factorial(3, X)).</b></li>
+<li><b>why(f(X)).</b></li>
+<li><b>why_all(f(X)).</b></li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+
+
+<i>Note: the pmlx.pl code above is quite simple and there are many
+things we can do improve its use of PML such as: </p>
+<ul>
+<li>To record provenance information when files are loaded in Prolog</li>
+<li>To use provenance information when generating proofs</li>
+<li>To generating AND and OR proof trees in PML on demand</li>
+</ul>
+</body>
+
+</html>

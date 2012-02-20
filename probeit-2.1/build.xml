@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="Probe-It!">
+	<property name="jarfile" value="probeit.jar" />
+	<property name="dist-zipfile" value="probeit.zip" />
+	<property name="src-zipfile" value="probeit-src.zip" />
+	<property name="batfile" value="probeit.bat" />
+	<property name="singlemapclientbatfile" value="singlemap-client.bat" />
+	<property name="scenarioclientbatfile" value="scenario-client.bat" />
+	<property name="threesourceclientbatfile" value="threesource-client.bat" />
+	<property name="experimentclientbatfile" value="experiment.bat" />
+	<property name="build" value="${basedir}/build"/>
+	<property name="dist" value="${basedir}/dist"/>
+	<property name="divadir" value="${basedir}/../diva"/>
+	
+	<target name="build" depends="jar" description="Create binary distribution zip file">
+		<mkdir dir="${dist}"/>
+
+		<copydir src="${basedir}/lib" dest="${dist}/lib"/>
+	    <copydir src="${basedir}/doc" dest="${dist}/doc"/>
+		<copydir src="${basedir}/win" dest="${dist}/win"/>
+		<copydir src="${basedir}/unix" dest="${dist}/unix"/>
+		
+		<copy file="${basedir}/${jarfile}" todir="${dist}"/>
+			
+		<zip destfile="${basedir}/${dist-zipfile}" basedir="${dist}" includes="**/**"/>
+	</target>
+	
+	<target name="src" depends="clean" description="Create source distribution zip file">
+		<zip destfile="${basedir}/${src-zipfile}" basedir="${basedir}" includes="**/**"/>
+	</target>
+	
+	<target name="jar" depends="compile" description="Creates a probe-it jar file">
+		<jar destfile="${jarfile}">
+			<fileset dir="${build}" includes="**/*.*" />
+			<manifest>
+				<attribute name="Main-Class" value="probeIt.ProbeIt" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="compile" depends="clean" description="Compile and store all the java files output in the directory build">		
+		<mkdir dir="${build}"/>
+		<copydir src="${basedir}/src/probeIt/image" dest="${build}/probeIt/image"/>
+		<javac destdir="${build}/" srcdir="${basedir}/src/" target="1.5"> 
+	    	<include name="**/*.java"/>
+			<classpath>
+				<fileset dir="../lib/axis4/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="../lib/common/">
+					<include name="*.jar"/>
+				</fileset>	
+				<fileset dir="../lib/jena/">
+					<include name="*.jar"/>
+				</fileset>	
+				<fileset dir="../lib/diva/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="../lib/util/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="../lib/iwapps/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="../lib/pml2/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="${basedir}/lib/viewers/">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>			
+		</javac> 
+	</target>
+
+	<target name="javadoc" depends="compile"
+	        description="generate Probe-It! JavaDoc" >
+	    <javadoc
+	           destdir="doc"
+	           author="true"
+	           version="true"
+	           use="true"
+	           windowtitle="Probe-It! Javadoc">
+
+	      <fileset dir="src" defaultexcludes="yes">
+	        <include name="probeIt/*.java" />
+	        <include name="probeIt/**/*.java" />
+	      </fileset>
+
+	      <doctitle><![CDATA[<h1>Probe-It! Javadoc</h1>]]></doctitle>
+	      <link href="http://trust.utep.edu/ciminer/software/probeit/doc/"/>
+	    </javadoc>
+	</target>	
+	
+	<target name="clean" description="Delete the build directory and the jar file">
+		<delete dir ="${build}" />
+		<delete dir ="${dist}" />
+		<delete file="${basedir}/${jarfile}" />
+		<delete file="${basedir}/${dist-zipfile}" />
+		<delete file="${basedir}/${src-zipfile}" />
+	</target>
+	
+</project>
