@@ -33,7 +33,7 @@ public class ProbeItActions {
 //	public static ProbeItGenericAction BookmarkGravity2 = new BookmarkGravityAction_bsgroup();
 //	public static ProbeItGenericAction BookmarkGravity3 = new BookmarkGravityAction_dsgroup();
 //	public static ProbeItGenericAction BookmarkGravity4 = new BookmarkGravityAction_real();
-	public static ProbeItGenericAction BookmarkGravity4 = new BookmarkGravityAction_new();
+	public static ProbeItGenericAction BookmarkGravity = new BookmarkGravityAction_new();
 	public static ProbeItGenericAction BookmarkTPTP = new BookmarkTPTP2PML();
 	public static ProbeItGenericAction BookmarkTPTPAgatha = new BookmarkTPTP2PMLAgatha();
 	public static ProbeItGenericAction BookmarkEQL1 = new BookmarkEQL1Action();
@@ -75,6 +75,8 @@ public class ProbeItActions {
 	public static ProbeItGenericAction ZoomIn = new ZoomInAction();
 	public static ProbeItGenericAction ZoomOut = new ZoomOutAction();
 	public static ProbeItGenericAction PMLSource = new PMLSourceAction();
+	
+	public static ProbeItGenericAction BuildProvenanceGraph = new BuildProvenanceGraphAction();
 
 	// viewer related actions
 	public static ProbeItGenericAction CloseAll = new CloseAllAction();

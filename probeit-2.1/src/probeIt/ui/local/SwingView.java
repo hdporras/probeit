@@ -1,6 +1,8 @@
 package probeIt.ui.local;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import probeIt.ProbeIt;
 import pml.loading.Loader;
@@ -8,8 +10,11 @@ import pml.loading.Loader;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
+import probeIt.ui.ProbeItView;
 import probeIt.ui.Toolbar;
+import probeIt.ui.ViewsManager;
 import probeIt.ui.local.swing.*;
+import probeIt.ui.model.ViewsModel;
 import probeIt.viewerFramework.DAGContentFactory;
 import probeIt.viewerFramework.viewers.imaging.ProbeitImage;
 import pml.PMLNode;
@@ -103,6 +108,22 @@ public class SwingView
 			ImageIcon imageIcon = new ImageIcon(image.getImage());
 			JLabel icon = new JLabel(imageIcon);
 
+			icon.addMouseListener(new MouseAdapter(){
+				public void mouseClicked(MouseEvent evt) 
+				{
+					if(evt.getButton() == MouseEvent.BUTTON1)
+					{
+						if(currentConclusionURI != null)
+						{
+							ViewsModel.getInstance().setAnswer(currentConclusionURI);
+							//update NodeSelectionInteractor._lastPointedFigure to the linked NodeSet. Will have to check URI's in tree to find correct one, unless another method?
+						}
+						else
+							System.out.println("PMLNode (link) is NULL.");
+					}
+				}
+			});
+			
 			concP.add(icon);
 			//PMLNode nodeset, int imgSize
 		}
@@ -125,6 +146,24 @@ public class SwingView
 				 
 				 text.setText(probeIt.util.LineFormatter.formatText(concText, 70, 10));//"~ hates(butler, butler)  |  ~ hates(butler, charles)");
 				 //text.setBorder(new EtchedBorder());
+				 
+				 text.addMouseListener(new MouseAdapter(){
+						public void mouseClicked(MouseEvent evt) 
+						{
+							if(evt.getButton() == MouseEvent.BUTTON1)
+							{
+								if(currentConclusionURI != null)
+								{
+									ViewsModel.getInstance().setAnswer(currentConclusionURI);
+									//update NodeSelectionInteractor._lastPointedFigure to the linked NodeSet. Will have to check URI's in tree to find correct one, unless another method?
+								}
+								else
+									System.out.println("PMLNode (link) is NULL.");
+							}
+						}
+					});
+				 
+				 
 				 concP.add(text);
 			 }catch(Exception e)
 			 {e.printStackTrace();}

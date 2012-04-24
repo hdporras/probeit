@@ -227,16 +227,17 @@ public class ViewsModel {
 		
 		nodeSet = aNodeSet;
 		((ProbeItView)ViewsManager.getInstance().getViewPane()).buildJustificationView(ViewsManager.getInstance().justStyle);
-		((ProbeItView)ViewsManager.getInstance().getViewPane()).buildProvenanceView();
+		//((ProbeItView)ViewsManager.getInstance().getViewPane()).buildProvenanceView();
 		if (aNodeSet.getURI() != null)
 			((ProbeItView)ViewsManager.getInstance().getViewPane()).buildWorkflowView();
+		((ProbeItView)ViewsManager.getInstance().getViewPane()).setActiveIndex(ProbeItView.GLOBAL_JUSTIFICATION_TAB);
 		level = LOAD_JUSTIFICATION;
 	}
 	
-	/*
+	/**
 	 *  Loads the justification trace for the given URI. Assigns the
 	 *  last node set of the loaded justification as the model's node
-	 *  set.
+	 *  set. (By calling PMLLoader.start() which calls ViewsModel.setJustification(PMLNode) )
 	 */
 	public void setJustification(String uri)
 	{
@@ -246,6 +247,23 @@ public class ViewsModel {
 		}
 		
 		PMLLoader loader = new PMLLoader(uri.trim());
+		loader.start();  // this call will eventually invoke setJustification(PMLNode)
+		level = LOAD_JUSTIFICATION;
+	}
+	
+	/** used to load a justification from Answer View. 
+	 * Which means a PMLNodeset has already been loaded and has the URI (and is found in local variable "nodeSet"). 
+	 */
+	public void setJustification()
+	{
+		if (level == LOAD_JUSTIFICATION)
+		{
+			// nothing to do, full justification is already loaded
+			return;
+		}
+		
+		PMLLoader loader = new PMLLoader( nodeSet.getURI() );
+		loader.setLoadAnswerOnly(false);//load justification instead of just the node
 		loader.start();  // this call will eventually invoke setJustification(PMLNode)
 		level = LOAD_JUSTIFICATION;
 	}

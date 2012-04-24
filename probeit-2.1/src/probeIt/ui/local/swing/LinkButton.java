@@ -59,7 +59,8 @@ public class LinkButton extends JPanel//JButton
 					{
 						if(link != null)
 						{
-							ViewsModel.getInstance().setAnswer(link);
+							//ViewsModel.getInstance().setAnswer(link);
+							((ProbeItView)ViewsManager.getInstance().getViewPane()).buildProvenanceView(link);
 							//update NodeSelectionInteractor._lastPointedFigure to the linked NodeSet. Will have to check URI's in tree to find correct one, unless another method?
 						}
 						else
@@ -103,7 +104,8 @@ public class LinkButton extends JPanel//JButton
 					{
 						if(link != null)
 						{
-							ViewsModel.getInstance().setAnswer(link);
+							//ViewsModel.getInstance().setAnswer(link);
+							((ProbeItView)ViewsManager.getInstance().getViewPane()).buildProvenanceView(link);
 							//update NodeSelectionInteractor._lastPointedFigure to the linked NodeSet. Will have to check URI's in tree to find correct one, unless another method?
 						}
 						else

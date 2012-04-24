@@ -213,11 +213,12 @@ public class ProbeItView extends JPanel
 		ProbeIt.getInstance().getFrame().repaint();
 	}
 
-	public void buildProvenanceView()
-	{	
-		String stringView = new Loader(ProbeIt.getInstance().isRemote()).getNodeSetDetailsString(ViewsModel.getInstance().getLocalViewNodesetURI());
+	public void buildProvenanceView(String uri)
+	{
+		//String stringView = new Loader(ProbeIt.getInstance().isRemote()).getNodeSetDetailsString(ViewsModel.getInstance().getLocalViewNodesetURI());
+		String stringView = new Loader(ProbeIt.getInstance().isRemote()).getNodeSetDetailsString(uri);
 
-		JPanel view = SwingView.getNodeSetDetailsSwing(stringView, ViewsModel.getInstance().getLocalViewNodesetURI());
+		JPanel view = SwingView.getNodeSetDetailsSwing(stringView, uri);
 		setProvenanceTab(view);
 		this.setActiveIndex(LOCAL_JUSTIFICATION_TAB);
 	}

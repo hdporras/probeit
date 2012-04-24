@@ -63,7 +63,9 @@ public class Toolbar extends JPanel implements ChangeListener
 		else if(canvasType == CanvasType.answerView)
 		{
 			System.out.println("answer view type");
-			JButton seeGlobalViewButton = new JButton(ProbeItActions.LookUp);
+			
+			//JButton seeGlobalViewButton = new JButton(ProbeItActions.LookUp);
+			JButton seeGlobalViewButton = new JButton(ProbeItActions.BuildProvenanceGraph);
 			add(seeGlobalViewButton, BoxLayout.X_AXIS);
 			add(new JPanel());
 			add(new JPanel());

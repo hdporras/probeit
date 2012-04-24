@@ -16,7 +16,7 @@ public class BookmarkGravityAction_new extends ProbeItGenericAction
 	public void actionPerformed(ActionEvent e)
 	{
 		ViewsModel.getInstance().newContext();
-		ProbeIt.getInstance().getWindow().setURI("http://rio.cs.utep.edu/ciserver/ciprojects/GravityMapPML/ContourMapCMTroyNY_06755935507149695.owl#answer");
+		ProbeIt.getInstance().getWindow().setURI("http://rio.cs.utep.edu/ciserver/ciprojects/GravityMapProvenance/gravityContourMap.ps_038568341971146025.owl#answer");
 	}
 
 }

@@ -61,11 +61,11 @@ public class MainMenuBar extends JMenuBar
 		// Create menus
 		menuFile = new JMenu("File");
 		menuBookmark = new JMenu("Bookmark");
-		subMenuGravity = new JMenu("Gravity Map Bookmarks");
-		subMenuEQL = new JMenu("Enhanced QuickLook Bookmaks");
+		//subMenuGravity = new JMenu("Gravity Map Bookmarks");
+		//subMenuEQL = new JMenu("Enhanced QuickLook Bookmaks");
 		subMenuTPTP = new JMenu("TPTP Proofs");
 		subMenuHolesCode = new JMenu("Hole's Code Executions");
-		subMenuTDS = new JMenu("DHS - Threat Detection System");
+		//subMenuTDS = new JMenu("DHS - Threat Detection System");
 		menuPreferences = new JMenu("Preferences");
 		menuConfiguration = new JMenu("Configuration");
 		menuViewers = new JMenu("Viewers");
@@ -134,12 +134,7 @@ public class MainMenuBar extends JMenuBar
 		
 		menuBookmark.add(ProbeItActions.BookmarkTony);
 		menuBookmark.add(ProbeItActions.BookmarkSciPub);
-	//	subMenuGravity.add(ProbeItActions.BookmarkGravity);
-	//	subMenuGravity.add(ProbeItActions.BookmarkGravity1);
-	//	subMenuGravity.add(ProbeItActions.BookmarkGravity2);
-	//	subMenuGravity.add(ProbeItActions.BookmarkGravity3);
-//	subMenuGravity.add(ProbeItActions.BookmarkGravity4);
-		//subMenuGravity.add(ProbeItActions.BookmarkGravity4);
+		menuBookmark.add(ProbeItActions.BookmarkGravity);
 		
 		//subMenuEQL.add(ProbeItActions.BookmarkEQL1);
 		//subMenuEQL.add(ProbeItActions.BookmarkEQL2);
@@ -151,12 +146,9 @@ public class MainMenuBar extends JMenuBar
 		//subMenuTDS.add(ProbeItActions.BookmarkTDS);
 		//subMenuTDS.add(ProbeItActions.BookmarkTDS1);
 		
-	//	subMenuHolesCode.add(ProbeItActions.BookmarkPC3);
 		subMenuHolesCode.add(ProbeItActions.BookmarkHoles);
 		subMenuHolesCode.add(ProbeItActions.BookmarkHolesFull);
 		
-		//menuBookmark.add(subMenuEQL);
-		//menuBookmark.add(subMenuGravity);
 		menuBookmark.add(subMenuTPTP);
 		//menuBookmark.add(subMenuTDS);
 		menuBookmark.add(subMenuHolesCode);

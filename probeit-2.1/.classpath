@@ -59,5 +59,10 @@
 	<classpathentry kind="lib" path="lib/jgraph/jgraph.jar"/>
 	<classpathentry kind="lib" path="lib/pml/pml-lightweight.jar"/>
 	<classpathentry kind="lib" path="lib/pml/pml.jar"/>
+	<classpathentry kind="lib" path="lib/iwapps/app_shared.jar"/>
+	<classpathentry kind="lib" path="lib/iwapps/app_util.jar"/>
+	<classpathentry kind="lib" path="lib/iwapps/browser.jar"/>
+	<classpathentry kind="lib" path="lib/iwapps/iwpml.jar"/>
+	<classpathentry kind="lib" path="lib/pml/shared.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
