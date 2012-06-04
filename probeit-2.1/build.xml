@@ -30,11 +30,34 @@
 	</target>
 	
 	<target name="jar" depends="compile" description="Creates a probe-it jar file">
+		<!--
+		<path id="build.classpath">
+		  <fileset dir="lib">
+		    <include name="**/*.jar" />
+		  </fileset>
+		</path>
+		
+		-->
+		
+		<!-- convert build.classpath to mf.classpath (the string needed for the manifest task) -->
+		
+		<!--
+		<pathconvert property="mf.classpath" pathsep=";lib/*/">
+			<path refid="build.classpath" />
+		    <flattenmapper />
+		</pathconvert>
+		
+		
+		<echo> ${mf.classpath} </echo>-->
+		
 		<jar destfile="${jarfile}">
 			<fileset dir="${build}" includes="**/*.*" />
+			
 			<manifest>
 				<attribute name="Main-Class" value="probeIt.ProbeIt" />
+				<!--<attribute name="Class-Path" value="${mf.classpath}" />-->
 			</manifest>
+			
 		</jar>
 	</target>
 	
@@ -44,25 +67,34 @@
 		<javac destdir="${build}/" srcdir="${basedir}/src/" target="1.5"> 
 	    	<include name="**/*.java"/>
 			<classpath>
-				<fileset dir="../lib/axis4/">
+				<fileset dir="${basedir}/lib/axis4/">
 					<include name="*.jar"/>
 				</fileset>
-				<fileset dir="../lib/common/">
+				<fileset dir="${basedir}/lib/common/">
 					<include name="*.jar"/>
 				</fileset>	
-				<fileset dir="../lib/jena/">
+				<fileset dir="${basedir}/lib/jena262/">
 					<include name="*.jar"/>
 				</fileset>	
-				<fileset dir="../lib/diva/">
+				<fileset dir="${basedir}/lib/diva/">
 					<include name="*.jar"/>
 				</fileset>
-				<fileset dir="../lib/util/">
+				<fileset dir="${basedir}/lib/util/">
+					<include name="dataset.jar"/>
+					<include name="gmtServices.jar"/>
+					<include name="soap.jar"/>
+					<include name="RDFStore2.jar"/>
+				</fileset>
+				<fileset dir="${basedir}/lib/iwapps/">
 					<include name="*.jar"/>
 				</fileset>
-				<fileset dir="../lib/iwapps/">
+				<fileset dir="${basedir}/lib/pml2/">
 					<include name="*.jar"/>
 				</fileset>
-				<fileset dir="../lib/pml2/">
+				<fileset dir="${basedir}/lib/jmf/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="${basedir}/lib/jgraph/">
 					<include name="*.jar"/>
 				</fileset>
 				<fileset dir="${basedir}/lib/viewers/">
